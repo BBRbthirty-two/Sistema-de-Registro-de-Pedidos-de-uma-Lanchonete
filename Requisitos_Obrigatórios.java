@@ -7,8 +7,7 @@ public class Requisitos_Obrigatórios {
 
         Scanner entrada = new Scanner(System.in).useLocale(Locale.US);
 
-        String cliente;
-        String resposta;
+        String cliente , resposta;
 
         int quantidadePedidos = 0;
 
@@ -33,7 +32,6 @@ public class Requisitos_Obrigatórios {
             } while (valorCompra <= 0);
 
             quantidadePedidos++;
-
             valorTotal = valorTotal + valorCompra;
 
             if (quantidadePedidos == 1 || valorCompra > maior) {
@@ -46,22 +44,22 @@ public class Requisitos_Obrigatórios {
 
             entrada.nextLine();
 
-            System.out.println("Cadastrar novo pedido?");
+            System.out.println("\nCadastrar novo pedido?");
             System.out.println("1 - Sim");
             System.out.println("2 - Não");
+            System.out.print("Escolha: ");
 
             resposta = entrada.nextLine();
 
-        } while (resposta.equals("1"));
+        } while (resposta.equals(1));
 
-        double ticketMedio = valorTotal / quantidadePedidos;
+        double ticket = valorTotal / quantidadePedidos;
 
         System.out.println("Quantidade de pedidos: " + quantidadePedidos);
-        System.out.printf("Valor total vendido: R$" + valorTotal);
-        System.out.printf("Ticket médio: R$" + ticketMedio);
-        System.out.printf("Maior compra: R$" + maior);
-        System.out.printf("Menor compra: R$" + menor);
-
+        System.out.printf("Valor total vendido: R$", valorTotal);
+        System.out.printf("Ticket médio: R$", ticket);
+        System.out.printf("Maior compra: R$", maior);
+        System.out.printf("Menor compra: R$", menor);
         entrada.close();
     }
 }

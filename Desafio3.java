@@ -7,8 +7,7 @@ public class Desafio3 {
 
         Scanner entrada = new Scanner(System.in).useLocale(Locale.US);
 
-        String nomeCliente;
-        String resposta;
+        String nomeCliente, resposta;
         String clienteMaiorCompra = "";
 
         int quantidadePedidos = 0;
@@ -42,7 +41,6 @@ public class Desafio3 {
             if (quantidadePedidos == 1 || valorCompra > maiorCompra) {
                 maiorCompra = valorCompra;
 
-                // DESAFIO 2
                 clienteMaiorCompra = nomeCliente;
             }
 
@@ -52,7 +50,7 @@ public class Desafio3 {
 
             entrada.nextLine();
 
-            System.out.println("\nCadastrar novo pedido?");
+            System.out.println("Cadastrar novo pedido?");
             System.out.println("1 - Sim");
             System.out.println("2 - Não");
             System.out.print("Escolha: ");
@@ -77,8 +75,7 @@ public class Desafio3 {
             double mediaAcima30 = totalAcima30 / quantidadeAcima30;
 
             System.out.printf(
-                "Média das compras acima de R$ 30,00: R$ %.2f%n",
-                mediaAcima30
+                "Média das compras acima de R$ 30,00: R$" + mediaAcima30
             );
 
         } else {

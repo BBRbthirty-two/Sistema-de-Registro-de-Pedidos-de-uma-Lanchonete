@@ -7,8 +7,7 @@ public class Desafio1 {
 
         Scanner entrada = new Scanner(System.in).useLocale(Locale.US);
 
-        String cliente;
-        String resposta;
+        String cliente , resposta;
 
         int quantidadePedidos = 0;
         int comprasAcima50 = 0;
@@ -44,7 +43,6 @@ public class Desafio1 {
                 menor = valorCompra;
             }
 
-            // DESAFIO 1
             if (valorCompra > 50) {
                 comprasAcima50++;
             }

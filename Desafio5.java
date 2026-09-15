@@ -1,14 +1,13 @@
 import java.util.Locale;
 import java.util.Scanner;
 
-public class Desafio2 {
+public class Desafio5 {
 
     public static void main(String[] args) {
 
         Scanner entrada = new Scanner(System.in).useLocale(Locale.US);
 
         String cliente , resposta;
-        String clienteMaiorCompra = "";
 
         int quantidadePedidos = 0;
 
@@ -23,22 +22,24 @@ public class Desafio2 {
             cliente = entrada.nextLine();
 
             do {
+
                 System.out.print("Valor da compra: R$ ");
                 valorCompra = entrada.nextDouble();
 
                 if (valorCompra <= 0) {
-                    System.out.println("O valor deve ser maior que zero.");
+                    System.out.println(
+                        "O valor deve ser maior que zero."
+                    );
                 }
 
             } while (valorCompra <= 0);
 
             quantidadePedidos++;
+
             valorTotal = valorTotal + valorCompra;
 
             if (quantidadePedidos == 1 || valorCompra > maiorCompra) {
                 maiorCompra = valorCompra;
-
-                clienteMaiorCompra = cliente;
             }
 
             if (quantidadePedidos == 1 || valorCompra < menorCompra) {
@@ -47,7 +48,7 @@ public class Desafio2 {
 
             entrada.nextLine();
 
-            System.out.println("\nCadastrar novo pedido?");
+            System.out.println("Cadastrar novo pedido?");
             System.out.println("1 - Sim");
             System.out.println("2 - Não");
             System.out.print("Escolha: ");
@@ -58,15 +59,16 @@ public class Desafio2 {
 
         double ticketMedio = valorTotal / quantidadePedidos;
 
-
         System.out.println("Quantidade de pedidos: " + quantidadePedidos);
         System.out.printf("Valor total vendido: R$" + valorTotal);
         System.out.printf("Ticket médio: R$" + ticketMedio);
         System.out.printf("Maior compra: R$" + maiorCompra);
         System.out.printf("Menor compra: R$" + menorCompra);
 
-        System.out.println("Cliente com maior compra: " + clienteMaiorCompra);
+        if (valorTotal > 500) {
+            System.out.println("\nMeta atingida!");
+        }
 
         entrada.close();
+        }
     }
-}
